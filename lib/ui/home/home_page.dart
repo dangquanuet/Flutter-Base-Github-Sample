@@ -9,7 +9,7 @@ import 'package:app/ui/home/user_item.dart';
 import 'package:app/ui/hook/use_l10n.dart';
 import 'package:app/ui/hook/use_router.dart';
 import 'package:app/ui/theme/layout_size.dart';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
+// import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -141,7 +141,7 @@ class HomePage extends HookConsumerWidget {
   }
 
   void _checkForceUpdate(BuildContext context) {
-    RemoteConfig.instance.fetchAndActivate().then((value) async {
+    /*RemoteConfig.instance.fetchAndActivate().then((value) async {
       String forceUpdateVersion =
           RemoteConfig.instance.getString(Keys.forceUpdateVersion);
       final packageInfo = await PackageInfo.fromPlatform();
@@ -158,6 +158,6 @@ class HomePage extends HookConsumerWidget {
               context: context, appPackage: packageInfo.packageName);
         }
       } on Exception catch (_, ex) {}
-    });
+    });*/
   }
 }

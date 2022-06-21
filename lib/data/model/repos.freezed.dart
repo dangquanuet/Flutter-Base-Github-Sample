@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'repos.dart';
@@ -11,46 +12,11 @@ part of 'repos.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Repos _$ReposFromJson(Map<String, dynamic> json) {
   return _Repos.fromJson(json);
 }
-
-/// @nodoc
-class _$ReposTearOff {
-  const _$ReposTearOff();
-
-  _Repos call(
-      {@JsonKey(name: 'description') String? description,
-      @JsonKey(name: 'forks_count') int? forksCount,
-      @JsonKey(name: 'full_name') String? fullName,
-      @JsonKey(name: 'language') String? language,
-      @JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'stargazers_count') int? stargazersCount,
-      @JsonKey(name: 'updated_at') String? updatedAt,
-      @JsonKey(name: 'watchers_count') int? watchersCount,
-      @JsonKey(name: 'html_url') String? htmlUrl}) {
-    return _Repos(
-      description: description,
-      forksCount: forksCount,
-      fullName: fullName,
-      language: language,
-      id: id,
-      stargazersCount: stargazersCount,
-      updatedAt: updatedAt,
-      watchersCount: watchersCount,
-      htmlUrl: htmlUrl,
-    );
-  }
-
-  Repos fromJson(Map<String, Object?> json) {
-    return Repos.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Repos = _$ReposTearOff();
 
 /// @nodoc
 mixin _$Repos {
@@ -156,9 +122,9 @@ class _$ReposCopyWithImpl<$Res> implements $ReposCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$ReposCopyWith<$Res> implements $ReposCopyWith<$Res> {
-  factory _$ReposCopyWith(_Repos value, $Res Function(_Repos) then) =
-      __$ReposCopyWithImpl<$Res>;
+abstract class _$$_ReposCopyWith<$Res> implements $ReposCopyWith<$Res> {
+  factory _$$_ReposCopyWith(_$_Repos value, $Res Function(_$_Repos) then) =
+      __$$_ReposCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'description') String? description,
@@ -173,13 +139,13 @@ abstract class _$ReposCopyWith<$Res> implements $ReposCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ReposCopyWithImpl<$Res> extends _$ReposCopyWithImpl<$Res>
-    implements _$ReposCopyWith<$Res> {
-  __$ReposCopyWithImpl(_Repos _value, $Res Function(_Repos) _then)
-      : super(_value, (v) => _then(v as _Repos));
+class __$$_ReposCopyWithImpl<$Res> extends _$ReposCopyWithImpl<$Res>
+    implements _$$_ReposCopyWith<$Res> {
+  __$$_ReposCopyWithImpl(_$_Repos _value, $Res Function(_$_Repos) _then)
+      : super(_value, (v) => _then(v as _$_Repos));
 
   @override
-  _Repos get _value => super._value as _Repos;
+  _$_Repos get _value => super._value as _$_Repos;
 
   @override
   $Res call({
@@ -193,7 +159,7 @@ class __$ReposCopyWithImpl<$Res> extends _$ReposCopyWithImpl<$Res>
     Object? watchersCount = freezed,
     Object? htmlUrl = freezed,
   }) {
-    return _then(_Repos(
+    return _then(_$_Repos(
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -288,7 +254,7 @@ class _$_Repos implements _Repos {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Repos &&
+            other is _$_Repos &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
             const DeepCollectionEquality()
@@ -304,6 +270,7 @@ class _$_Repos implements _Repos {
             const DeepCollectionEquality().equals(other.htmlUrl, htmlUrl));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -319,8 +286,8 @@ class _$_Repos implements _Repos {
 
   @JsonKey(ignore: true)
   @override
-  _$ReposCopyWith<_Repos> get copyWith =>
-      __$ReposCopyWithImpl<_Repos>(this, _$identity);
+  _$$_ReposCopyWith<_$_Repos> get copyWith =>
+      __$$_ReposCopyWithImpl<_$_Repos>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -330,46 +297,47 @@ class _$_Repos implements _Repos {
 
 abstract class _Repos implements Repos {
   factory _Repos(
-      {@JsonKey(name: 'description') String? description,
-      @JsonKey(name: 'forks_count') int? forksCount,
-      @JsonKey(name: 'full_name') String? fullName,
-      @JsonKey(name: 'language') String? language,
-      @JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'stargazers_count') int? stargazersCount,
-      @JsonKey(name: 'updated_at') String? updatedAt,
-      @JsonKey(name: 'watchers_count') int? watchersCount,
-      @JsonKey(name: 'html_url') String? htmlUrl}) = _$_Repos;
+      {@JsonKey(name: 'description') final String? description,
+      @JsonKey(name: 'forks_count') final int? forksCount,
+      @JsonKey(name: 'full_name') final String? fullName,
+      @JsonKey(name: 'language') final String? language,
+      @JsonKey(name: 'id') final int? id,
+      @JsonKey(name: 'stargazers_count') final int? stargazersCount,
+      @JsonKey(name: 'updated_at') final String? updatedAt,
+      @JsonKey(name: 'watchers_count') final int? watchersCount,
+      @JsonKey(name: 'html_url') final String? htmlUrl}) = _$_Repos;
 
   factory _Repos.fromJson(Map<String, dynamic> json) = _$_Repos.fromJson;
 
   @override
   @JsonKey(name: 'description')
-  String? get description;
+  String? get description => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'forks_count')
-  int? get forksCount;
+  int? get forksCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'full_name')
-  String? get fullName;
+  String? get fullName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'language')
-  String? get language;
+  String? get language => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'id')
-  int? get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'stargazers_count')
-  int? get stargazersCount;
+  int? get stargazersCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'updated_at')
-  String? get updatedAt;
+  String? get updatedAt => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'watchers_count')
-  int? get watchersCount;
+  int? get watchersCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'html_url')
-  String? get htmlUrl;
+  String? get htmlUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ReposCopyWith<_Repos> get copyWith => throw _privateConstructorUsedError;
+  _$$_ReposCopyWith<_$_Repos> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -110,4 +110,4 @@ app:
       BITRISE_EXPORT_METHOD: production
     - opts:
         is_expand: false
-      ANDROID_SDK_VERSION: 29
+      ANDROID_SDK_VERSION: 32

@@ -2,10 +2,10 @@ import 'package:app/data/model/repos.dart';
 import 'package:app/data/model/result.dart';
 import 'package:app/data/model/user.dart';
 import 'package:app/data/provider/error_provider.dart';
-import 'package:app/data/remote/github_data_source.dart';
+import 'package:app/data/remote/api/github_data_source.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'github_repository.dart';
+import '../github_repository.dart';
 
 final githubRepositoryProvider =
     Provider((ref) => GithubRepositoryImpl(ref.read));

@@ -6,6 +6,8 @@ part of 'github_data_source.dart';
 // RetrofitGenerator
 // **************************************************************************
 
+// ignore_for_file: unnecessary_brace_in_string_interps
+
 class _GithubDataSource implements GithubDataSource {
   _GithubDataSource(this._dio, {this.baseUrl});
 

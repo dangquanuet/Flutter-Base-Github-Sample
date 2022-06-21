@@ -2,7 +2,7 @@ import 'package:app/data/model/repos.dart';
 import 'package:app/data/model/result.dart';
 import 'package:app/data/model/user.dart';
 import 'package:app/data/repository/github_repository.dart';
-import 'package:app/data/repository/github_repository_impl.dart';
+import 'package:app/data/repository/impl/github_repository_impl.dart';
 import 'package:app/ui/loading_state_view_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
