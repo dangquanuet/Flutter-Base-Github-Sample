@@ -11,13 +11,13 @@ Image profileImage(String? imageUrl, {Image? imagePlaceholder}) {
   return Image.network(imageUrl);
 }
 
-ImageProvider profileImageProvider(String? imageUrl,
+ImageProvider? profileImageProvider(String? imageUrl,
     {ImageProvider? imageProviderPlaceholder}) {
   if (imageUrl == null || imageUrl.isEmpty) {
     if (imageProviderPlaceholder != null) {
       return imageProviderPlaceholder;
     }
-    return Assets.images.iconPlaceholder;
+    return AssetImage(Assets.images.iconPlaceholder.path);
   }
   return NetworkImage(imageUrl);
 }

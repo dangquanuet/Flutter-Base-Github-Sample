@@ -46,7 +46,7 @@ class LanguagePage extends HookConsumerWidget {
           final locale = Constants.supportedLanguages.keys.elementAt(index);
           final name = Constants.supportedLanguages[locale]!;
           final isChecked =
-              viewModel.currentLocale.languageCode == locale ? true : false;
+              viewModel.currentLocale?.languageCode == locale ? true : false;
 
           return InkWell(
             onTap: () {

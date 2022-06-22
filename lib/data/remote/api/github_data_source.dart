@@ -1,6 +1,7 @@
 import 'package:app/data/model/repos.dart';
 import 'package:app/data/model/user.dart';
-import 'package:app/data/remote/api/app_dio.dart';
+import 'package:app/data/remote/builder/app_dio.dart';
+import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:retrofit/retrofit.dart';
 

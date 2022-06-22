@@ -1,3 +1,4 @@
+import 'package:app/data/remote/interceptor/token_interceptor.dart';
 import 'package:app/foundation/constants.dart';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
@@ -18,8 +19,12 @@ class AppDio with DioMixin implements Dio {
       sendTimeout: 30000,
       receiveTimeout: 30000,
     );
-
     this.options = options;
+
+    // Config cache
+    // final cacheConfig = CacheConfig(baseUrl: Constants.shared().endpoint);
+    // interceptors.add(DioCacheManager(cacheConfig).interceptor as InterceptorsWrapper);
+
     interceptors.add(InterceptorsWrapper(onRequest: (options, handler) async {
       options.headers.addAll(await userAgentClientHintsHeader());
       // Add header api key of base for authorization
@@ -34,6 +39,8 @@ class AppDio with DioMixin implements Dio {
       // Local Log
       interceptors.add(LogInterceptor(responseBody: true, requestBody: true));
     }
+
+    interceptors.add(TokenInterceptor(currentDio: this));
 
     httpClientAdapter = DefaultHttpClientAdapter();
   }

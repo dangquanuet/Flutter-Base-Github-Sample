@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void showErrorSnackbar({
+void showErrorSnackBar({
   required BuildContext context,
   required String message,
 }) {

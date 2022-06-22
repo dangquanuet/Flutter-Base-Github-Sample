@@ -1,7 +1,5 @@
-import 'package:app/foundation/keys.dart';
 import 'package:app/gen/assets.gen.dart';
 import 'package:app/route/app_router.dart';
-import 'package:app/ui/component/dialog/force_update_dialog.dart';
 import 'package:app/ui/component/error/container_error_handling.dart';
 import 'package:app/ui/home/github_repo_item.dart';
 import 'package:app/ui/home/home_page_view_model.dart';
@@ -13,7 +11,6 @@ import 'package:app/ui/theme/layout_size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 
 class HomePage extends HookConsumerWidget {
   const HomePage({Key? key}) : super(key: key);

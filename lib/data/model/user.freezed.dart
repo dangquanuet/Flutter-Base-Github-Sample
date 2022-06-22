@@ -20,17 +20,11 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  @JsonKey(name: 'avatar_url')
   String? get avatarUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'html_url')
   String? get htmlUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
-  @JsonKey(name: 'id')
   int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'public_repos')
   int? get publicRepos => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,12 +37,12 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'avatar_url') String? avatarUrl,
-      @JsonKey(name: 'html_url') String? htmlUrl,
-      @JsonKey(name: 'email') String? email,
-      @JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'public_repos') int? publicRepos});
+      {String? avatarUrl,
+      String? htmlUrl,
+      String? email,
+      int? id,
+      String? name,
+      int? publicRepos});
 }
 
 /// @nodoc
@@ -103,12 +97,12 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$_UserCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'avatar_url') String? avatarUrl,
-      @JsonKey(name: 'html_url') String? htmlUrl,
-      @JsonKey(name: 'email') String? email,
-      @JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'public_repos') int? publicRepos});
+      {String? avatarUrl,
+      String? htmlUrl,
+      String? email,
+      int? id,
+      String? name,
+      int? publicRepos});
 }
 
 /// @nodoc
@@ -159,35 +153,30 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_User implements _User {
   _$_User(
-      {@JsonKey(name: 'avatar_url') this.avatarUrl,
-      @JsonKey(name: 'html_url') this.htmlUrl,
-      @JsonKey(name: 'email') this.email,
-      @JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'name') this.name,
-      @JsonKey(name: 'public_repos') this.publicRepos});
+      {this.avatarUrl,
+      this.htmlUrl,
+      this.email,
+      this.id,
+      this.name,
+      this.publicRepos});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
   @override
-  @JsonKey(name: 'avatar_url')
   final String? avatarUrl;
   @override
-  @JsonKey(name: 'html_url')
   final String? htmlUrl;
   @override
-  @JsonKey(name: 'email')
   final String? email;
   @override
-  @JsonKey(name: 'id')
   final int? id;
   @override
-  @JsonKey(name: 'name')
   final String? name;
   @override
-  @JsonKey(name: 'public_repos')
   final int? publicRepos;
 
   @override
@@ -233,32 +222,26 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   factory _User(
-      {@JsonKey(name: 'avatar_url') final String? avatarUrl,
-      @JsonKey(name: 'html_url') final String? htmlUrl,
-      @JsonKey(name: 'email') final String? email,
-      @JsonKey(name: 'id') final int? id,
-      @JsonKey(name: 'name') final String? name,
-      @JsonKey(name: 'public_repos') final int? publicRepos}) = _$_User;
+      {final String? avatarUrl,
+      final String? htmlUrl,
+      final String? email,
+      final int? id,
+      final String? name,
+      final int? publicRepos}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
-  @JsonKey(name: 'avatar_url')
   String? get avatarUrl => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'html_url')
   String? get htmlUrl => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'id')
   int? get id => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'public_repos')
   int? get publicRepos => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

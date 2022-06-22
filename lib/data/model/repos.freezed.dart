@@ -20,23 +20,14 @@ Repos _$ReposFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Repos {
-  @JsonKey(name: 'description')
   String? get description => throw _privateConstructorUsedError;
-  @JsonKey(name: 'forks_count')
   int? get forksCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'full_name')
   String? get fullName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'language')
   String? get language => throw _privateConstructorUsedError;
-  @JsonKey(name: 'id')
   int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'stargazers_count')
   int? get stargazersCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'updated_at')
   String? get updatedAt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'watchers_count')
   int? get watchersCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'html_url')
   String? get htmlUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,15 +40,15 @@ abstract class $ReposCopyWith<$Res> {
   factory $ReposCopyWith(Repos value, $Res Function(Repos) then) =
       _$ReposCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'description') String? description,
-      @JsonKey(name: 'forks_count') int? forksCount,
-      @JsonKey(name: 'full_name') String? fullName,
-      @JsonKey(name: 'language') String? language,
-      @JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'stargazers_count') int? stargazersCount,
-      @JsonKey(name: 'updated_at') String? updatedAt,
-      @JsonKey(name: 'watchers_count') int? watchersCount,
-      @JsonKey(name: 'html_url') String? htmlUrl});
+      {String? description,
+      int? forksCount,
+      String? fullName,
+      String? language,
+      int? id,
+      int? stargazersCount,
+      String? updatedAt,
+      int? watchersCount,
+      String? htmlUrl});
 }
 
 /// @nodoc
@@ -127,15 +118,15 @@ abstract class _$$_ReposCopyWith<$Res> implements $ReposCopyWith<$Res> {
       __$$_ReposCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'description') String? description,
-      @JsonKey(name: 'forks_count') int? forksCount,
-      @JsonKey(name: 'full_name') String? fullName,
-      @JsonKey(name: 'language') String? language,
-      @JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'stargazers_count') int? stargazersCount,
-      @JsonKey(name: 'updated_at') String? updatedAt,
-      @JsonKey(name: 'watchers_count') int? watchersCount,
-      @JsonKey(name: 'html_url') String? htmlUrl});
+      {String? description,
+      int? forksCount,
+      String? fullName,
+      String? language,
+      int? id,
+      int? stargazersCount,
+      String? updatedAt,
+      int? watchersCount,
+      String? htmlUrl});
 }
 
 /// @nodoc
@@ -201,48 +192,40 @@ class __$$_ReposCopyWithImpl<$Res> extends _$ReposCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_Repos implements _Repos {
   _$_Repos(
-      {@JsonKey(name: 'description') this.description,
-      @JsonKey(name: 'forks_count') this.forksCount,
-      @JsonKey(name: 'full_name') this.fullName,
-      @JsonKey(name: 'language') this.language,
-      @JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'stargazers_count') this.stargazersCount,
-      @JsonKey(name: 'updated_at') this.updatedAt,
-      @JsonKey(name: 'watchers_count') this.watchersCount,
-      @JsonKey(name: 'html_url') this.htmlUrl});
+      {this.description,
+      this.forksCount,
+      this.fullName,
+      this.language,
+      this.id,
+      this.stargazersCount,
+      this.updatedAt,
+      this.watchersCount,
+      this.htmlUrl});
 
   factory _$_Repos.fromJson(Map<String, dynamic> json) =>
       _$$_ReposFromJson(json);
 
   @override
-  @JsonKey(name: 'description')
   final String? description;
   @override
-  @JsonKey(name: 'forks_count')
   final int? forksCount;
   @override
-  @JsonKey(name: 'full_name')
   final String? fullName;
   @override
-  @JsonKey(name: 'language')
   final String? language;
   @override
-  @JsonKey(name: 'id')
   final int? id;
   @override
-  @JsonKey(name: 'stargazers_count')
   final int? stargazersCount;
   @override
-  @JsonKey(name: 'updated_at')
   final String? updatedAt;
   @override
-  @JsonKey(name: 'watchers_count')
   final int? watchersCount;
   @override
-  @JsonKey(name: 'html_url')
   final String? htmlUrl;
 
   @override
@@ -297,44 +280,35 @@ class _$_Repos implements _Repos {
 
 abstract class _Repos implements Repos {
   factory _Repos(
-      {@JsonKey(name: 'description') final String? description,
-      @JsonKey(name: 'forks_count') final int? forksCount,
-      @JsonKey(name: 'full_name') final String? fullName,
-      @JsonKey(name: 'language') final String? language,
-      @JsonKey(name: 'id') final int? id,
-      @JsonKey(name: 'stargazers_count') final int? stargazersCount,
-      @JsonKey(name: 'updated_at') final String? updatedAt,
-      @JsonKey(name: 'watchers_count') final int? watchersCount,
-      @JsonKey(name: 'html_url') final String? htmlUrl}) = _$_Repos;
+      {final String? description,
+      final int? forksCount,
+      final String? fullName,
+      final String? language,
+      final int? id,
+      final int? stargazersCount,
+      final String? updatedAt,
+      final int? watchersCount,
+      final String? htmlUrl}) = _$_Repos;
 
   factory _Repos.fromJson(Map<String, dynamic> json) = _$_Repos.fromJson;
 
   @override
-  @JsonKey(name: 'description')
   String? get description => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'forks_count')
   int? get forksCount => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'full_name')
   String? get fullName => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'language')
   String? get language => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'id')
   int? get id => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'stargazers_count')
   int? get stargazersCount => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'updated_at')
   String? get updatedAt => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'watchers_count')
   int? get watchersCount => throw _privateConstructorUsedError;
   @override
-  @JsonKey(name: 'html_url')
   String? get htmlUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

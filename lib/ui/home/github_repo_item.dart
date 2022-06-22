@@ -5,7 +5,6 @@ import 'package:app/ui/hook/use_l10n.dart';
 import 'package:app/ui/hook/use_router.dart';
 import 'package:app/ui/theme/font_size.dart';
 import 'package:app/ui/theme/layout_size.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

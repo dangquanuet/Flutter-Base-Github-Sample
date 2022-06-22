@@ -3,15 +3,11 @@ import 'package:app/data/model/result.dart';
 import 'package:app/data/model/user.dart';
 import 'package:app/data/provider/error_provider.dart';
 import 'package:app/data/remote/api/github_data_source.dart';
+import 'package:app/data/repository/github_repo.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../github_repository.dart';
-
-final githubRepositoryProvider =
-    Provider((ref) => GithubRepositoryImpl(ref.read));
-
-class GithubRepositoryImpl implements GithubRepository {
-  GithubRepositoryImpl(this._reader);
+class GithubRepoImpl implements GithubRepo {
+  GithubRepoImpl(this._reader);
 
   final Reader _reader;
 

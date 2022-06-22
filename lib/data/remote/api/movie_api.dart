@@ -1,5 +1,5 @@
 import 'package:app/data/model/movie.dart';
-import 'package:app/data/remote/api/app_dio.dart';
+import 'package:app/data/remote/builder/app_dio.dart';
 import 'package:app/data/remote/response/movie_list_response.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:retrofit/retrofit.dart';

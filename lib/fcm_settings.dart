@@ -1,8 +1,6 @@
-import 'package:app/data/provider/shared_preference_provider.dart';
-import 'package:app/foundation/keys.dart';
+import 'package:app/data/local/pref_helper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -68,11 +66,13 @@ Future<void> _androidSettings(WidgetRef ref) async {
               // ignore: flutter_style_todos
               // TODO add a proper drawable resource to android, for now using
               //      one that already exists in example app.
-              icon: '@drawable/ic_notification', // The icon should use one color, it will have problem when show with icon use many colors
+              icon: '@drawable/ic_notification',
+              // The icon should use one color, it will have problem when show with icon use many colors
               color: const Color.fromRGBO(255, 255, 0, 1.0),
             ),
           ),
-          payload: notification.body); // can create a payload with json format and parse when click on push
+          payload: notification
+              .body); // can create a payload with json format and parse when click on push
     }
   });
 }
@@ -122,13 +122,13 @@ Future<void> fetchFCMToken(WidgetRef ref) async {
     if (fcmToken != null) {
       debugPrint('Update fcm token');
       final prefs = ref.read(prefsProvider);
-      prefs.setString(Keys.firebaseToken, fcmToken);
+      prefs.setFirebaseToken(fcmToken);
     }
   });
 
   FirebaseMessaging.instance.onTokenRefresh.listen((fcmToken) {
     debugPrint('Called onTokenRefresh and FCM Token: $fcmToken');
     final prefs = ref.read(prefsProvider);
-    prefs.setString(Keys.firebaseToken, fcmToken);
+    prefs.setFirebaseToken(fcmToken);
   });
 }
