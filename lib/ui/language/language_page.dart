@@ -1,7 +1,7 @@
 import 'package:app/foundation/constants.dart';
 import 'package:app/foundation/extension/padding.dart';
-import 'package:app/ui/hook/use_l10n.dart';
-import 'package:app/ui/hook/use_router.dart';
+import 'package:app/hook/use_l10n.dart';
+import 'package:app/hook/use_router.dart';
 import 'package:app/ui/language/language_view_model.dart';
 import 'package:app/ui/theme/app_colors.dart';
 import 'package:app/ui/theme/app_theme.dart';

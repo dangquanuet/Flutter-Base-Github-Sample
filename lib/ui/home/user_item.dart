@@ -1,6 +1,6 @@
 import 'package:app/data/model/user.dart';
+import 'package:app/hook/use_l10n.dart';
 import 'package:app/ui/component/image/image.dart';
-import 'package:app/ui/hook/use_l10n.dart';
 import 'package:app/ui/theme/font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

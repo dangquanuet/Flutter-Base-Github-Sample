@@ -1,5 +1,5 @@
 import 'package:app/ui/component/loading/loading.dart';
-import 'package:app/ui/loading_state_view_model.dart';
+import 'package:app/ui/component/loading_state_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

@@ -1,8 +1,8 @@
 import 'package:app/data/model/repos.dart';
 import 'package:app/foundation/extension/date_time.dart';
+import 'package:app/hook/use_l10n.dart';
+import 'package:app/hook/use_router.dart';
 import 'package:app/route/app_router.dart';
-import 'package:app/ui/hook/use_l10n.dart';
-import 'package:app/ui/hook/use_router.dart';
 import 'package:app/ui/theme/font_size.dart';
 import 'package:app/ui/theme/layout_size.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,6 @@ class GithubRepoItem extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = useRouter();
-
     final l10n = useL10n();
     return Card(
       shape: OutlineInputBorder(

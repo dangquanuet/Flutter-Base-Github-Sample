@@ -28,15 +28,15 @@ class Constants {
 
   factory Constants._dev() {
     return const Constants._(
-      endpoint: 'https://api.github.com',
-      apiKey: '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',
+      endpoint: 'https://api.themoviedb.org/',
+      apiKey: '2cdf3a5c7cf412421485f89ace91e373',
     );
   }
 
   factory Constants._prd() {
     return const Constants._(
-      endpoint: 'https://api.github.com',
-      apiKey: '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',
+      endpoint: 'https://api.themoviedb.org/',
+      apiKey: '2cdf3a5c7cf412421485f89ace91e373',
     );
   }
 

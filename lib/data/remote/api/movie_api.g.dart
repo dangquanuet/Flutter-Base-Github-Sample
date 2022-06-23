@@ -16,9 +16,10 @@ class _MovieApi implements MovieApi {
   String? baseUrl;
 
   @override
-  Future<MovieListResponse> getMovieList({required page}) async {
+  Future<MovieListResponse> getMovieList(queries) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'page': page};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queries);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -28,22 +29,6 @@ class _MovieApi implements MovieApi {
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = MovieListResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
-  Future<Movie> getMovie({required movieId}) async {
-    const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<Movie>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '3/movie/${movieId}',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = Movie.fromJson(_result.data!);
     return value;
   }
 

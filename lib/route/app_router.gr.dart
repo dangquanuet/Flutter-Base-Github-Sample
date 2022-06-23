@@ -21,6 +21,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<HomePage>(
           routeData: routeData, child: const HomePage());
     },
+    MovieListRoute.name: (routeData) {
+      return MaterialPageX<MovieListPage>(
+          routeData: routeData, child: const MovieListPage());
+    },
     DetailRoute.name: (routeData) {
       final args = routeData.argsAs<DetailRouteArgs>();
       return MaterialPageX<DetailPage>(
@@ -36,8 +40,9 @@ class _$AppRouter extends RootStackRouter {
   @override
   List<RouteConfig> get routes => [
         RouteConfig('/#redirect',
-            path: '/', redirectTo: '/home', fullMatch: true),
+            path: '/', redirectTo: '/movielist', fullMatch: true),
         RouteConfig(HomeRoute.name, path: '/home'),
+        RouteConfig(MovieListRoute.name, path: '/movielist'),
         RouteConfig(DetailRoute.name, path: '/detail'),
         RouteConfig(LanguageRoute.name, path: '/language')
       ];
@@ -49,6 +54,14 @@ class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute() : super(HomeRoute.name, path: '/home');
 
   static const String name = 'HomeRoute';
+}
+
+/// generated route for
+/// [MovieListPage]
+class MovieListRoute extends PageRouteInfo<void> {
+  const MovieListRoute() : super(MovieListRoute.name, path: '/movielist');
+
+  static const String name = 'MovieListRoute';
 }
 
 /// generated route for

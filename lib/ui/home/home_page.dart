@@ -1,11 +1,11 @@
 import 'package:app/gen/assets.gen.dart';
+import 'package:app/hook/use_l10n.dart';
+import 'package:app/hook/use_router.dart';
 import 'package:app/route/app_router.dart';
 import 'package:app/ui/component/error/container_error_handling.dart';
 import 'package:app/ui/home/github_repo_item.dart';
 import 'package:app/ui/home/home_page_view_model.dart';
 import 'package:app/ui/home/user_item.dart';
-import 'package:app/ui/hook/use_l10n.dart';
-import 'package:app/ui/hook/use_router.dart';
 import 'package:app/ui/theme/layout_size.dart';
 // import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';

@@ -27,6 +27,7 @@ class App extends HookConsumerWidget {
 
     return MaterialApp.router(
       theme: theme.data,
+      debugShowCheckedModeBanner: false,
       darkTheme: AppTheme.light().data,
       themeMode: themeMode,
       locale: languageViewModel.currentLocale,
