@@ -17,7 +17,7 @@ class MovieListViewModel extends ChangeNotifier {
   late final MovieRepo _repo = _reader(movieRepoProvider);
   late final _loadingProvider = _reader(loadingStateProvider);
   List<Movie> _itemList = [];
-  bool _isFirstLoad = true;
+  bool isFirstLoad = true;
   bool isLoading = false;
   bool isLoadSuccess = false;
   bool isLoadError = false;
@@ -62,12 +62,11 @@ class MovieListViewModel extends ChangeNotifier {
   }
 
   Future<void> firstLoad() async {
-    if (_isFirstLoad &&
+    if (isFirstLoad &&
         _currentPage == _getPreFirstPage() &&
         itemList.isEmpty) {
-      _isFirstLoad = false;
+      isFirstLoad = false;
       loadPage(_getFirstPage());
-      notifyListeners();
     }
   }
 

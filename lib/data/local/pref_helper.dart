@@ -9,7 +9,7 @@ final prefsProvider = Provider<PrefHelper>(
 abstract class PrefHelper {
   Future<bool> firstRun();
 
-  Future<void> setFirstRun(bool isFirstRun);
+  Future setFirstRun(bool isFirstRun);
 
   Future<String?> getToken();
 
@@ -19,9 +19,9 @@ abstract class PrefHelper {
 
   Future<User?> getUserSaved();
 
-  Future<String> setFirebaseToken(String firebaseToken);
+  Future setFirebaseToken(String firebaseToken);
 
-  Future<String> setCurrentLocale(String currentLocale);
+  Future setCurrentLocale(String currentLocale);
 
   Future<String?> getCurrentLocale();
 }

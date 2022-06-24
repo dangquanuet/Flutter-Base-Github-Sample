@@ -5,40 +5,40 @@ import 'package:app/data/model/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppPrefs extends PrefHelper {
-  static const String firstRunKey = 'first_run_key';
-  static const String tokenKey = 'token_key';
-  static const String userKey = 'user_key';
-  static const String firebaseTokenKey = 'firebaseTokenKey';
-  static const String currentLocaleKey = 'currentLocaleKey';
+  // keys
+  final String _firstRunKey = '_firstRunKey';
+  final String _tokenKey = '_tokenKey';
+  final String _userKey = '_userKey';
+  final String _firebaseTokenKey = '_firebaseTokenKey';
+  final String _currentLocaleKey = '_currentLocaleKey';
 
-  @override
-  Future<bool> firstRun() async {
-    final preferences = await SharedPreferences.getInstance();
-    return preferences.getBool(firstRunKey) ?? true;
+  Future<SharedPreferences> _getPrefs() async {
+    return SharedPreferences.getInstance();
   }
 
   @override
-  Future<void> setFirstRun(bool isFirstRun) async {
-    final preferences = await SharedPreferences.getInstance();
-    await preferences.setBool(firstRunKey, isFirstRun);
+  Future<bool> firstRun() async {
+    return (await _getPrefs()).getBool(_firstRunKey) ?? true;
+  }
+
+  @override
+  Future setFirstRun(bool isFirstRun) async {
+    await (await _getPrefs()).setBool(_firstRunKey, isFirstRun);
   }
 
   @override
   Future<String?> getToken() async {
-    final preferences = await SharedPreferences.getInstance();
-    return preferences.getString(tokenKey);
+    return (await _getPrefs()).getString(_tokenKey);
   }
 
   @override
   Future setToken(String token) async {
-    final preferences = await SharedPreferences.getInstance();
-    await preferences.setString(tokenKey, token);
+    await (await _getPrefs()).setString(_tokenKey, token);
   }
 
   @override
   Future<User?> getUserSaved() async {
-    final preferences = await SharedPreferences.getInstance();
-    final userJson = preferences.getString(userKey);
+    final userJson = (await _getPrefs()).getString(_userKey);
     if (userJson != null) {
       try {
         return User.fromJson(jsonDecode(userJson));
@@ -51,27 +51,21 @@ class AppPrefs extends PrefHelper {
 
   @override
   Future saveUser(User user) async {
-    final preferences = await SharedPreferences.getInstance();
-    await preferences.setString(userKey, user.toJson().toString());
+    (await _getPrefs()).setString(_userKey, user.toJson().toString());
   }
 
   @override
-  Future<String> setFirebaseToken(String firebaseToken) async {
-    final preferences = await SharedPreferences.getInstance();
-    await preferences.setString(firebaseTokenKey, firebaseToken);
-    return firebaseToken;
+  Future setFirebaseToken(String firebaseToken) async {
+    (await _getPrefs()).setString(_firebaseTokenKey, firebaseToken);
   }
 
   @override
-  Future<String> setCurrentLocale(String currentLocale) async {
-    final preferences = await SharedPreferences.getInstance();
-    await preferences.setString(currentLocaleKey, currentLocale);
-    return currentLocale;
+  Future setCurrentLocale(String currentLocale) async {
+    (await _getPrefs()).setString(_currentLocaleKey, currentLocale);
   }
 
   @override
   Future<String?> getCurrentLocale() async {
-    final preferences = await SharedPreferences.getInstance();
-    return preferences.getString(currentLocaleKey);
+    return (await _getPrefs()).getString(_currentLocaleKey);
   }
 }
