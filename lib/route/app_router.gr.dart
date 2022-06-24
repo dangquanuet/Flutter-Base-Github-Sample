@@ -25,6 +25,12 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<MovieListPage>(
           routeData: routeData, child: const MovieListPage());
     },
+    MovieDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<MovieDetailRouteArgs>();
+      return MaterialPageX<MovieDetailPage>(
+          routeData: routeData,
+          child: MovieDetailPage(key: args.key, movie: args.movie));
+    },
     DetailRoute.name: (routeData) {
       final args = routeData.argsAs<DetailRouteArgs>();
       return MaterialPageX<DetailPage>(
@@ -43,6 +49,7 @@ class _$AppRouter extends RootStackRouter {
             path: '/', redirectTo: '/movielist', fullMatch: true),
         RouteConfig(HomeRoute.name, path: '/home'),
         RouteConfig(MovieListRoute.name, path: '/movielist'),
+        RouteConfig(MovieDetailRoute.name, path: '/moviedetail'),
         RouteConfig(DetailRoute.name, path: '/detail'),
         RouteConfig(LanguageRoute.name, path: '/language')
       ];
@@ -62,6 +69,30 @@ class MovieListRoute extends PageRouteInfo<void> {
   const MovieListRoute() : super(MovieListRoute.name, path: '/movielist');
 
   static const String name = 'MovieListRoute';
+}
+
+/// generated route for
+/// [MovieDetailPage]
+class MovieDetailRoute extends PageRouteInfo<MovieDetailRouteArgs> {
+  MovieDetailRoute({Key? key, required Movie movie})
+      : super(MovieDetailRoute.name,
+            path: '/moviedetail',
+            args: MovieDetailRouteArgs(key: key, movie: movie));
+
+  static const String name = 'MovieDetailRoute';
+}
+
+class MovieDetailRouteArgs {
+  const MovieDetailRouteArgs({this.key, required this.movie});
+
+  final Key? key;
+
+  final Movie movie;
+
+  @override
+  String toString() {
+    return 'MovieDetailRouteArgs{key: $key, movie: $movie}';
+  }
 }
 
 /// generated route for

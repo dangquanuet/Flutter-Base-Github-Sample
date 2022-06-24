@@ -1,7 +1,9 @@
+import 'package:app/data/model/movie.dart';
 import 'package:app/data/model/repos.dart';
 import 'package:app/ui/detail/detail_page.dart';
 import 'package:app/ui/home/home_page.dart';
 import 'package:app/ui/language/language_page.dart';
+import 'package:app/ui/moviedetail/movie_detail_page.dart';
 import 'package:app/ui/movielist/movie_list_page.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +25,10 @@ final appRouterProvider = Provider((_) => AppRouter());
       path: '/movielist',
       page: MovieListPage,
       initial: true,
+    ),
+    AutoRoute<MovieDetailPage>(
+      path: '/moviedetail',
+      page: MovieDetailPage,
     ),
     AutoRoute<DetailPage>(
       path: '/detail',
