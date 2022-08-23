@@ -1,3 +1,5 @@
+# Android Studio plugin https://plugins.jetbrains.com/plugin/9333-makefile-language
+
 .PHONY: setup
 setup:
 	npm install

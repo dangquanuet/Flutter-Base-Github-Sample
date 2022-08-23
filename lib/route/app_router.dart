@@ -5,6 +5,7 @@ import 'package:app/ui/home/home_page.dart';
 import 'package:app/ui/language/language_page.dart';
 import 'package:app/ui/moviedetail/movie_detail_page.dart';
 import 'package:app/ui/movielist/movie_list_page.dart';
+import 'package:app/ui/test_page/test_page.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -24,7 +25,6 @@ final appRouterProvider = Provider((_) => AppRouter());
     AutoRoute<MovieListPage>(
       path: '/movielist',
       page: MovieListPage,
-      initial: true,
     ),
     AutoRoute<MovieDetailPage>(
       path: '/moviedetail',
@@ -38,6 +38,11 @@ final appRouterProvider = Provider((_) => AppRouter());
       path: '/language',
       page: LanguagePage,
     ),
+    AutoRoute<TestPage>(
+      path: "/testPage",
+      page: TestPage,
+      initial: true,
+    )
   ],
 )
 class AppRouter extends _$AppRouter {

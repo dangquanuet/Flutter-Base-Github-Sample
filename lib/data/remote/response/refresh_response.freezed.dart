@@ -147,7 +147,9 @@ class _$_RefreshResponse implements _RefreshResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RefreshResponseToJson(this);
+    return _$$_RefreshResponseToJson(
+      this,
+    );
   }
 }
 
@@ -160,9 +162,9 @@ abstract class _RefreshResponse implements RefreshResponse {
       _$_RefreshResponse.fromJson;
 
   @override
-  String? get accessToken => throw _privateConstructorUsedError;
+  String? get accessToken;
   @override
-  String? get refreshToken => throw _privateConstructorUsedError;
+  String? get refreshToken;
   @override
   @JsonKey(ignore: true)
   _$$_RefreshResponseCopyWith<_$_RefreshResponse> get copyWith =>

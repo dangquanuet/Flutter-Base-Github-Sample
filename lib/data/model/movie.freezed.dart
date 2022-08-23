@@ -375,7 +375,9 @@ class _$_Movie implements _Movie {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieToJson(this);
+    return _$$_MovieToJson(
+      this,
+    );
   }
 }
 
@@ -399,33 +401,33 @@ abstract class _Movie implements Movie {
   factory _Movie.fromJson(Map<String, dynamic> json) = _$_Movie.fromJson;
 
   @override
-  bool? get adult => throw _privateConstructorUsedError;
+  bool? get adult;
   @override
-  String? get backdropPath => throw _privateConstructorUsedError;
+  String? get backdropPath;
   @override
-  List<int>? get genreIds => throw _privateConstructorUsedError;
+  List<int>? get genreIds;
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  String? get originalLanguage => throw _privateConstructorUsedError;
+  String? get originalLanguage;
   @override
-  String? get originalTitle => throw _privateConstructorUsedError;
+  String? get originalTitle;
   @override
-  String? get overview => throw _privateConstructorUsedError;
+  String? get overview;
   @override
-  double? get popularity => throw _privateConstructorUsedError;
+  double? get popularity;
   @override
-  String? get posterPath => throw _privateConstructorUsedError;
+  String? get posterPath;
   @override
-  String? get releaseDate => throw _privateConstructorUsedError;
+  String? get releaseDate;
   @override
-  String? get title => throw _privateConstructorUsedError;
+  String? get title;
   @override
-  bool? get video => throw _privateConstructorUsedError;
+  bool? get video;
   @override
-  double? get voteAverage => throw _privateConstructorUsedError;
+  double? get voteAverage;
   @override
-  int? get voteCount => throw _privateConstructorUsedError;
+  int? get voteCount;
   @override
   @JsonKey(ignore: true)
   _$$_MovieCopyWith<_$_Movie> get copyWith =>

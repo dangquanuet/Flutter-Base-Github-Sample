@@ -192,7 +192,9 @@ class _$_MovieListResponse implements _MovieListResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieListResponseToJson(this);
+    return _$$_MovieListResponseToJson(
+      this,
+    );
   }
 }
 
@@ -207,13 +209,13 @@ abstract class _MovieListResponse implements MovieListResponse {
       _$_MovieListResponse.fromJson;
 
   @override
-  int? get page => throw _privateConstructorUsedError;
+  int? get page;
   @override
-  List<Movie>? get results => throw _privateConstructorUsedError;
+  List<Movie>? get results;
   @override
-  int? get totalPages => throw _privateConstructorUsedError;
+  int? get totalPages;
   @override
-  int? get totalResults => throw _privateConstructorUsedError;
+  int? get totalResults;
   @override
   @JsonKey(ignore: true)
   _$$_MovieListResponseCopyWith<_$_MovieListResponse> get copyWith =>

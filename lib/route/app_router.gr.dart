@@ -40,18 +40,23 @@ class _$AppRouter extends RootStackRouter {
     LanguageRoute.name: (routeData) {
       return MaterialPageX<LanguagePage>(
           routeData: routeData, child: const LanguagePage());
+    },
+    TestRoute.name: (routeData) {
+      return MaterialPageX<TestPage>(
+          routeData: routeData, child: const TestPage());
     }
   };
 
   @override
   List<RouteConfig> get routes => [
         RouteConfig('/#redirect',
-            path: '/', redirectTo: '/movielist', fullMatch: true),
+            path: '/', redirectTo: '/testPage', fullMatch: true),
         RouteConfig(HomeRoute.name, path: '/home'),
         RouteConfig(MovieListRoute.name, path: '/movielist'),
         RouteConfig(MovieDetailRoute.name, path: '/moviedetail'),
         RouteConfig(DetailRoute.name, path: '/detail'),
-        RouteConfig(LanguageRoute.name, path: '/language')
+        RouteConfig(LanguageRoute.name, path: '/language'),
+        RouteConfig(TestRoute.name, path: '/testPage')
       ];
 }
 
@@ -124,4 +129,12 @@ class LanguageRoute extends PageRouteInfo<void> {
   const LanguageRoute() : super(LanguageRoute.name, path: '/language');
 
   static const String name = 'LanguageRoute';
+}
+
+/// generated route for
+/// [TestPage]
+class TestRoute extends PageRouteInfo<void> {
+  const TestRoute() : super(TestRoute.name, path: '/testPage');
+
+  static const String name = 'TestRoute';
 }

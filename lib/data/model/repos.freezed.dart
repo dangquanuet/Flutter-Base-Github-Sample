@@ -274,7 +274,9 @@ class _$_Repos implements _Repos {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ReposToJson(this);
+    return _$$_ReposToJson(
+      this,
+    );
   }
 }
 
@@ -293,23 +295,23 @@ abstract class _Repos implements Repos {
   factory _Repos.fromJson(Map<String, dynamic> json) = _$_Repos.fromJson;
 
   @override
-  String? get description => throw _privateConstructorUsedError;
+  String? get description;
   @override
-  int? get forksCount => throw _privateConstructorUsedError;
+  int? get forksCount;
   @override
-  String? get fullName => throw _privateConstructorUsedError;
+  String? get fullName;
   @override
-  String? get language => throw _privateConstructorUsedError;
+  String? get language;
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int? get id;
   @override
-  int? get stargazersCount => throw _privateConstructorUsedError;
+  int? get stargazersCount;
   @override
-  String? get updatedAt => throw _privateConstructorUsedError;
+  String? get updatedAt;
   @override
-  int? get watchersCount => throw _privateConstructorUsedError;
+  int? get watchersCount;
   @override
-  String? get htmlUrl => throw _privateConstructorUsedError;
+  String? get htmlUrl;
   @override
   @JsonKey(ignore: true)
   _$$_ReposCopyWith<_$_Repos> get copyWith =>
