@@ -41,12 +41,16 @@ class MovieListViewModel extends ChangeNotifier {
   }
 
   // need to rewrite for each page
-  Future<Result<List<Movie>>> callApi({required int page}) async {
+  Future<Result<List<Movie>>> callApi({
+    required int page,
+  }) async {
     return _repo.getPopularMovieList(page: page);
   }
 
   // get item list
-  Future<void> loadPage(int page) async {
+  Future<void> loadPage({
+    required int page,
+  }) async {
     isLoadSuccess = false;
     isLoadError = false;
     isLoading = true;
@@ -62,17 +66,15 @@ class MovieListViewModel extends ChangeNotifier {
   }
 
   Future<void> firstLoad() async {
-    if (isFirstLoad &&
-        _currentPage == _getPreFirstPage() &&
-        itemList.isEmpty) {
+    if (isFirstLoad && _currentPage == _getPreFirstPage() && itemList.isEmpty) {
       isFirstLoad = false;
-      loadPage(_getFirstPage());
+      loadPage(page: _getFirstPage());
     }
   }
 
   Future<void> refresh() async {
     _loadingProvider.toLoading();
-    loadPage(_getFirstPage());
+    loadPage(page: _getFirstPage());
     _loadingProvider.toIdle();
     notifyListeners();
   }
@@ -81,7 +83,7 @@ class MovieListViewModel extends ChangeNotifier {
     if (isLoading || _isLastPage) {
       return;
     }
-    loadPage(_currentPage + 1);
+    loadPage(page: _currentPage + 1);
     notifyListeners();
   }
 

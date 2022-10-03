@@ -3,6 +3,7 @@ import 'package:app/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'fcm_settings.dart';
@@ -25,16 +26,21 @@ class App extends HookConsumerWidget {
       fetchFCMToken(ref);
     });
 
-    return MaterialApp.router(
-      theme: theme.data,
-      debugShowCheckedModeBanner: false,
-      darkTheme: AppTheme.light().data,
-      themeMode: themeMode,
-      locale: languageViewModel.currentLocale,
-      localizationsDelegates: L10n.localizationsDelegates,
-      supportedLocales: L10n.supportedLocales,
-      routeInformationParser: router.defaultRouteParser(),
-      routerDelegate: router.delegate(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 734),
+      minTextAdapt: true,
+      builder: (context, child) => MaterialApp.router(
+        title: "Sample App",
+        theme: theme.data,
+        debugShowCheckedModeBanner: false,
+        darkTheme: AppTheme.light().data,
+        themeMode: themeMode,
+        locale: languageViewModel.currentLocale,
+        localizationsDelegates: L10n.localizationsDelegates,
+        supportedLocales: L10n.supportedLocales,
+        routeInformationParser: router.defaultRouteParser(),
+        routerDelegate: router.delegate(),
+      ),
     );
   }
 }

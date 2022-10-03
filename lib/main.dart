@@ -22,8 +22,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
 
   // Crashlytics
-  await FirebaseCrashlytics.instance
-      .setCrashlyticsCollectionEnabled(kDebugMode);
+  await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
   Function originalOnError = FlutterError.onError!;
   FlutterError.onError = (errorDetails) async {
     await FirebaseCrashlytics.instance.recordFlutterError(errorDetails);
@@ -52,7 +51,10 @@ Future<void> main() async {
   runZonedGuarded(() {
     runApp(
       const ProviderScope(
-        child: App(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: App(),
+        ),
       ),
     );
   }, (error, stackTrace) {

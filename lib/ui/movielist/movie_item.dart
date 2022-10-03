@@ -4,10 +4,16 @@ import 'package:app/hook/use_router.dart';
 import 'package:app/route/app_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../config/colors.dart';
+
 class MovieItem extends HookConsumerWidget {
-  const MovieItem({Key? key, required this.movie}) : super(key: key);
+  const MovieItem({
+    Key? key,
+    required this.movie,
+  }) : super(key: key);
 
   final Movie movie;
 
@@ -24,10 +30,10 @@ class MovieItem extends HookConsumerWidget {
             placeholder: (context, url) => const Center(
               child: CircularProgressIndicator(),
             ),
-            errorWidget: (context, url, error) => const Center(
+            errorWidget: (context, url, error) => Center(
               child: Icon(
                 Icons.error,
-                size: 100,
+                size: 100.sp,
                 color: Colors.red,
               ),
             ),
@@ -36,15 +42,15 @@ class MovieItem extends HookConsumerWidget {
           Container(
             padding: const EdgeInsets.all(16),
             alignment: Alignment.center,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(127, 0, 0, 0),
+            decoration: BoxDecoration(
+              color: ColorCustom.black50,
             ),
             child: Text(
               movie.title ?? '',
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 20.0,
+                fontSize: 20.sp,
               ),
             ),
           ),

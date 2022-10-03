@@ -5,6 +5,7 @@ import 'package:app/ui/movielist/movie_item.dart';
 import 'package:app/ui/movielist/movie_list_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MovieListPage extends HookConsumerWidget {
@@ -30,7 +31,7 @@ class MovieListPage extends HookConsumerWidget {
       () async {
         if (scrollController.position.pixels >
             scrollController.position.maxScrollExtent -
-                MediaQuery.of(context).size.height) {
+                ScreenUtil().screenHeight) {
           if (!movieListViewModel.isLoading) {
             movieListViewModel.loadMore();
           }
@@ -51,8 +52,8 @@ class MovieListPage extends HookConsumerWidget {
             onRefresh: () async => movieListViewModel.refresh(),
             child: isFirstLoad
                 ? SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
+                    width: ScreenUtil().screenWidth,
+                    height: ScreenUtil().screenHeight,
                     child: const Center(
                       child: CircularProgressIndicator(),
                     ),
@@ -62,8 +63,8 @@ class MovieListPage extends HookConsumerWidget {
                         itemCount: 1,
                         itemBuilder: (context, index) {
                           return Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: MediaQuery.of(context).size.height,
+                            width: ScreenUtil().screenWidth,
+                            height: ScreenUtil().screenHeight,
                             alignment: Alignment.center,
                             child: Text(l10n.noResult),
                           );
@@ -76,8 +77,9 @@ class MovieListPage extends HookConsumerWidget {
                           if (index == itemList.length) {
                             if (isLoadSuccess) {
                               return const SizedBox();
+                            } else {
+                              return const LinearProgressIndicator();
                             }
-                            return const LinearProgressIndicator();
                           } else {
                             return MovieItem(movie: itemList[index]);
                           }
