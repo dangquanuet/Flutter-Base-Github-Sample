@@ -7,12 +7,11 @@ import 'package:retrofit/retrofit.dart';
 
 part 'github_data_source.g.dart';
 
-final githubDataSourceProvider = Provider((ref) => GithubDataSource(ref.read));
+final githubDataSourceProvider = Provider((ref) => GithubDataSource(ref));
 
 @RestApi()
 abstract class GithubDataSource {
-  factory GithubDataSource(Reader reader) =>
-      _GithubDataSource(reader(dioProvider));
+  factory GithubDataSource(Ref ref) => _GithubDataSource(ref.read(dioProvider));
 
   @GET('/users/{id}')
   Future<User> getUser({

@@ -8,14 +8,14 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 // TODO change to generic
 
 final movieListViewModelProvider =
-    ChangeNotifierProvider((ref) => MovieListViewModel(ref.read));
+    ChangeNotifierProvider((ref) => MovieListViewModel(ref));
 
 class MovieListViewModel extends ChangeNotifier {
-  MovieListViewModel(this._reader);
+  MovieListViewModel(this._ref);
 
-  final Reader _reader;
-  late final MovieRepo _repo = _reader(movieRepoProvider);
-  late final _loadingProvider = _reader(loadingStateProvider);
+  final Ref _ref;
+  late final MovieRepo _repo = _ref.read(movieRepoProvider);
+  late final _loadingProvider = _ref.read(loadingStateProvider);
   List<Movie> _itemList = [];
   bool isFirstLoad = true;
   bool isLoading = false;

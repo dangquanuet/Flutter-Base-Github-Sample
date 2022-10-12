@@ -15,17 +15,17 @@ class ContainerErrorHandling extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final _isDialogShowing = useState(false);
+    final isDialogShowing = useState(false);
 
     // Check and show error when call api
     final appError = ref.watch(errorProvider.select((value) => value.appError));
     if (appError != null) {
       Future.delayed(Duration.zero, () {
         // Prevent dialog show multi times
-        if (!_isDialogShowing.value) {
-          _isDialogShowing.value = true;
+        if (!isDialogShowing.value) {
+          isDialogShowing.value = true;
           handleError(context, appError, () {
-            _isDialogShowing.value = false;
+            isDialogShowing.value = false;
           });
         }
       });

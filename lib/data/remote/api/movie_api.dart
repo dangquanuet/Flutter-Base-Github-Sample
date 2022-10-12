@@ -7,17 +7,17 @@ import 'package:retrofit/retrofit.dart';
 
 part 'movie_api.g.dart';
 
-final movieApiProvider = Provider((ref) => MovieApi(ref.read));
+final movieApiProvider = Provider((ref) => MovieApi(ref));
 
 @RestApi()
 abstract class MovieApi {
-  factory MovieApi(Reader reader) => _MovieApi(reader(dioProvider));
+  factory MovieApi(Ref ref) => _MovieApi(ref.read(dioProvider));
 
   @GET('3/discover/movie')
   Future<MovieListResponse> getMovieList(
     @Queries() Map<String, dynamic> queries,
   );
 
-  // @GET('3/movie/{movie_id}')
-  // Future<Movie> getMovie({@Path('movie_id') required String movieId});
+// @GET('3/movie/{movie_id}')
+// Future<Movie> getMovie({@Path('movie_id') required String movieId});
 }

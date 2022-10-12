@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-void showForceUpdateDialog(
-    {required BuildContext context, required String appPackage}) {
+void showForceUpdateDialog({
+  required BuildContext context,
+  required String appPackage,
+}) {
   final l10n = L10n.of(context)!;
   showDialog(
     context: context,
@@ -42,9 +44,9 @@ void showForceUpdateDialog(
 void _launchAppStore(String appPackage) {
   String urlAppStore = "";
   if (Platform.isIOS) {
-    urlAppStore = "https://apps.apple.com/app/id" + Constants.iOSAppId;
+    urlAppStore = "https://apps.apple.com/app/id${Constants.iOSAppId}";
   } else if (Platform.isAndroid) {
-    urlAppStore = "https://play.google.com/store/apps/details?id=" + appPackage;
+    urlAppStore = "https://play.google.com/store/apps/details?id=$appPackage";
   }
   launchUrl(Uri.parse(urlAppStore));
 }
