@@ -25,6 +25,7 @@ final appRouterProvider = Provider((_) => AppRouter());
     AutoRoute<MovieListPage>(
       path: '/movielist',
       page: MovieListPage,
+      initial: true,
     ),
     AutoRoute<MovieDetailPage>(
       path: '/moviedetail',
@@ -41,7 +42,6 @@ final appRouterProvider = Provider((_) => AppRouter());
     AutoRoute<TestPage>(
       path: "/testPage",
       page: TestPage,
-      initial: true,
     )
   ],
 )

@@ -51,27 +51,37 @@ class MovieDetailPage extends HookConsumerWidget {
                 ),
                 fit: BoxFit.fitWidth,
               ),
-              Text(
-                movie.originalTitle ?? '',
-                style: TextStyle(
-                  fontSize: 24.sp,
-                  color: Colors.white,
+              RPadding(
+                padding: REdgeInsets.all(16.r),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      movie.originalTitle ?? '',
+                      style: TextStyle(
+                        fontSize: 24.sp,
+                        color: Colors.white,
+                      ),
+                    ),
+                    10.verticalSpace,
+                    Text(
+                      movie.releaseDate ?? '',
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        color: Colors.white,
+                      ),
+                    ),
+                    10.verticalSpace,
+                    Text(
+                      movie.overview ?? '',
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Text(
-                movie.releaseDate ?? '',
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  color: Colors.white,
-                ),
-              ),
-              Text(
-                movie.overview ?? '',
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  color: Colors.white,
-                ),
-              )
             ],
           ),
         ),

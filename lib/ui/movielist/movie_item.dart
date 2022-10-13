@@ -40,7 +40,7 @@ class MovieItem extends HookConsumerWidget {
             fit: BoxFit.fitWidth,
           ),
           Container(
-            padding: const EdgeInsets.all(16),
+            padding: REdgeInsets.all(16.r),
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: ColorCustom.black50,

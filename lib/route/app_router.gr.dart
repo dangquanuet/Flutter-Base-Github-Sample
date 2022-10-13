@@ -68,7 +68,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           '/#redirect',
           path: '/',
-          redirectTo: '/testPage',
+          redirectTo: '/movielist',
           fullMatch: true,
         ),
         RouteConfig(
