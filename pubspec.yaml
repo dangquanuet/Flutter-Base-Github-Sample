@@ -15,15 +15,15 @@ dependencies:
     sdk: flutter
 
   # For Google and Firebase
-  firebase_core: ^1.23.0
+  firebase_core: ^2.1.0
 #  firebase_auth: ^3.3.20
-  firebase_crashlytics: ^2.8.11
+  firebase_crashlytics: ^3.0.2
 #  firebase_performance: ^0.7.1+5
 #  firebase_remote_config: ^1.0.2
 
   # Firebase Cloud Messaging
-  firebase_messaging: ^12.0.3
-  flutter_local_notifications: ^9.8.0+1
+  firebase_messaging: ^14.0.2
+  flutter_local_notifications: ^12.0.2
 
   # Architecture
   flutter_hooks: ^0.18.5+1
@@ -31,14 +31,15 @@ dependencies:
 
   # Networking
   dio: ^4.0.6
+  pretty_dio_logger: ^1.1.1
 #  dio_firebase_performance: ^0.3.0
   retrofit: ^3.3.1
   # User-Agent Client Hints
   ua_client_hints: ^1.1.2
 
   # Model
-  json_serializable: ^6.5.1
-  freezed_annotation: ^2.0.3
+  json_serializable: ^6.5.3
+  freezed_annotation: ^2.2.0
 
   # save data local
   shared_preferences: ^2.0.15
@@ -50,7 +51,7 @@ dependencies:
   enum_to_string: ^2.0.1
 
   # route
-  auto_route: ^5.0.1
+  auto_route: ^5.0.2
 
   # UIs
   cupertino_icons: ^1.0.5
@@ -61,7 +62,7 @@ dependencies:
   flutter_screenutil: ^5.5.4
 
   # querying information about an application package.
-  package_info_plus: ^1.4.3+1
+  package_info_plus: ^3.0.1
 
   # launching url
   url_launcher: ^6.1.6
@@ -70,26 +71,26 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  build_runner: ^2.3.0
+  build_runner: ^2.3.2
 
   # Networking
   retrofit_generator: ^4.2.0
 
   # Assets
-  flutter_gen_runner: ^5.0.2
+  flutter_gen_runner: ^5.0.3
   # auto_route and freezed version conflict
   # Model
-  freezed: ^2.0.3+1
+  freezed: ^2.2.0
 
   # Analyzer
   flutter_lints: ^2.0.1
 
   # AutoRoute
-  auto_route_generator: ^5.0.2
+  auto_route_generator: ^5.0.3
 
   # Testing
-  mocktail: ^0.3.0
-  mocktail_image_network: ^0.3.1
+#  mocktail: ^0.3.0
+#  mocktail_image_network: ^0.3.1
 
   # change package name quickly
   change_app_package_name: ^1.1.0

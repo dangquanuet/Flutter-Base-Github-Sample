@@ -4,7 +4,8 @@ import 'package:app/data/remote/api/user_api.dart';
 import 'package:app/data/remote/builder/app_dio.dart';
 import 'package:dio/dio.dart';
 
-class TokenInterceptor extends Interceptor {
+// https://github.com/flutterchina/dio/issues/1308
+class TokenInterceptor extends QueuedInterceptor {
   final Dio currentDio;
   final String auth = 'Authorization';
   final String bearer = 'Bearer';
@@ -17,11 +18,11 @@ class TokenInterceptor extends Interceptor {
         err.response?.statusCode == HttpStatus.unauthorized) {
       // TODO Please refactor when token api ready
       // Lock all of request to request new token
-      currentDio.lock();
+      // currentDio.lock();
       // request new token & save it
       final token = await requestToken();
       // unlock when token refreshed
-      currentDio.unlock();
+      // currentDio.unlock();
 
       // Re-call request
       final request = err.requestOptions;

@@ -27,24 +27,25 @@ Future<void> _androidSettings(WidgetRef ref) async {
           AndroidFlutterLocalNotificationsPlugin>()
       ?.createNotificationChannel(channel);
 
-  var initializationSettingsAndroid =
-      const AndroidInitializationSettings('@drawable/ic_notification');
-  var initializationSettingsIOs = const IOSInitializationSettings(
+  const initializationSettingsAndroid =
+      AndroidInitializationSettings('@drawable/ic_notification');
+  const initializationSettingsIOs = DarwinInitializationSettings(
       requestAlertPermission: false,
       requestBadgePermission: false,
       requestSoundPermission: false);
-  var initSettings = InitializationSettings(
-      android: initializationSettingsAndroid, iOS: initializationSettingsIOs);
+  const initSettings = InitializationSettings(
+    android: initializationSettingsAndroid,
+    iOS: initializationSettingsIOs,
+  );
 
   // Check click notification when app in foreground
-  await flutterLocalNotificationsPlugin.initialize(initSettings,
-      onSelectNotification: (String? payload) async {
-    debugPrint("FCM: On select notification");
-    if (payload != null) {
-      debugPrint('FCM: notification payload: $payload');
-      // Use for redirect push to specific screen
-    }
-  });
+  await flutterLocalNotificationsPlugin.initialize(
+    initSettings,
+    onDidReceiveNotificationResponse: (details) {
+      debugPrint("FCM: On select notification");
+      debugPrint('FCM: notification payload: $details');
+    },
+  );
 
   // Receive PN when app in foreground
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
